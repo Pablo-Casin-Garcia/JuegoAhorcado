@@ -9,18 +9,36 @@ const palabra = palabras[Math.floor(Math.random()*palabras.length)];
 
 let palabraConGuiones = palabra.replace(/./g, "_ ");
 
-document.querySelector('#output').innerHTML = palabraConGuiones;
+let contadorFallos = 0;
 
 document.querySelector('#calcular').addEventListener('click', () =>{
      const letra = document.querySelector('#letra').value;
      alert(letra)
-
+    let haFallado = true;
      for(const i in palabra){
         if(letra == palabra[i]){
             palabraConGuiones = palabraConGuiones.replace(i*2, letra);
+            haFallado = false;
         }
      }
 
      alert(palabraConGuiones)
+
+     if(haFallado){
+        contadorFallos++;
+        document.querySelector('#ahorcado').style.backgroundPosition = -(307*contadorFallos) + 'px 0';
+        if(contadorFallos == 4){
+            alert("Has sido ahorcado")
+        }
+     }else{
+        if(palabraConGuiones.indexOf('_') <0){
+            document.querySelector('#ganador').style.display = 'flex';
+        }
+     }
+
+     document.querySelector('#output').innerHTML = palabraConGuiones;
+
+     document.querySelector('#letra').value = '';
+     document.querySelector('#letra').focus();
      
 });
