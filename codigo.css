@@ -1,6 +1,6 @@
 #ahorcado{
-    height: 318px;
-    width: 307px;
+    height: 212px;
+    width: 204px;
     background-image: url(./hangman-game_pm-1024x212.webp);
 }
 
@@ -16,4 +16,46 @@
     top: 0;
     left: 0;
     background-color: white;
+}
+
+.pulsate-bck{
+    background-color: aqua;
+    -webkit-animation: pulsate-bck 0.5s infinite ;
+	        animation: pulsate-bck 0.5s infinite ;
+}
+
+@-webkit-keyframes pulsate-bck {
+    0% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+    50% {
+      -webkit-transform: scale(0.9);
+              transform: scale(0.9);
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+  }
+  @keyframes pulsate-bck {
+    0% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+    50% {
+      -webkit-transform: scale(0.9);
+              transform: scale(0.9);
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+  }
+  
+body{
+    background: #CECECE;
+    background: -moz-linear-gradient(left, #CECECE 0%, #00A476 50%, #00C1C5 100%);
+    background: -webkit-linear-gradient(left, #CECECE 0%, #00A476 50%, #00C1C5 100%);
+    background: linear-gradient(to right, #CECECE 0%, #00A476 50%, #00C1C5 100%);
 }

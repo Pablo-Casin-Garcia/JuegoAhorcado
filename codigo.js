@@ -11,22 +11,22 @@ let palabraConGuiones = palabra.replace(/./g, "_ ");
 
 let contadorFallos = 0;
 
-document.querySelector('#Calcular').addEventListener('click', () =>{
-     const letra = document.querySelector('#Letra').value;
-     alert(letra)
-    let haFallado = true;
+document.querySelector('#output').innerHTML = palabraConGuiones;
+
+document.querySelector('#calcular').addEventListener('click', () =>{
+     const letra = document.querySelector('#letra').value;
+     let haFallado = true;
      for(const i in palabra){
         if(letra == palabra[i]){
-            palabraConGuiones = palabraConGuiones.replace(i*2, letra);
+            palabraConGuiones = palabraConGuiones.replaceAt(i*2, letra);
             haFallado = false;
         }
      }
 
-     alert(palabraConGuiones)
 
      if(haFallado){
         contadorFallos++;
-        document.querySelector('#ahorcado').style.backgroundPosition = -(307*contadorFallos) + 'px 0';
+        document.querySelector('#ahorcado').style.backgroundPosition = -(204*contadorFallos) + 'px 0';
         if(contadorFallos == 4){
             alert("Has sido ahorcado")
         }
