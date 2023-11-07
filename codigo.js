@@ -11,8 +11,8 @@ let palabraConGuiones = palabra.replace(/./g, "_ ");
 
 let contadorFallos = 0;
 
-document.querySelector('#calcular').addEventListener('click', () =>{
-     const letra = document.querySelector('#letra').value;
+document.querySelector('#Calcular').addEventListener('click', () =>{
+     const letra = document.querySelector('#Letra').value;
      alert(letra)
     let haFallado = true;
      for(const i in palabra){
